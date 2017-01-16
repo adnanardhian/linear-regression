@@ -12,11 +12,16 @@ y_values = dataframe[['Y']].values.tolist()
 challenge_reg = linear_model.LinearRegression()
 challenge_reg.fit(x_values, y_values)
 
+#All Values
+#Returns the coefficient of determination R^2 of the prediction.
+print "Score 		: ",
+print challenge_reg.score(x_values,y_values)
+
 #Assign the Prediction Test of One Sample from existing data
 n = random.randint(0,len(x_values))
 one_pred = challenge_reg.predict([x_values[n]])[0]
 
-#Print The Values
+#Error of One value :
 print "Index of X 	: ", + (n)
 print "X Sample 	: ", + (x_values[n][0])
 print "Y Prediction	: ", + (one_pred[0])
@@ -27,3 +32,4 @@ print "Error    	: ", + (abs(one_pred[0] - y_values[n][0]))
 plt.scatter(x_values, y_values)
 plt.plot(x_values, challenge_reg.predict(x_values))
 plt.show()
+
