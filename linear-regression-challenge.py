@@ -18,7 +18,7 @@ print "Score 		: ",
 print challenge_reg.score(x_values,y_values)
 
 #Assign the Prediction Test of One Sample from existing data
-n = random.randint(0,len(x_values))
+n = random.randint(0,len(x_values)-1)
 one_pred = challenge_reg.predict([x_values[n]])[0]
 
 #Error of One value :
